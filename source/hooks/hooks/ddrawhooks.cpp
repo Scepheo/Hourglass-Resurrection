@@ -1,10 +1,11 @@
-/*  Copyright (C) 2011 nitsuja and contributors
+﻿/*  Copyright (C) 2011 nitsuja and contributors
     Hourglass is licensed under GPL v2. Full notice is in COPYING.txt. */
 
 #include "external/ddraw.h"
 #include "../wintasee.h"
 #include "../tls.h"
 #include <map>
+#include "hooks\libc\string.h"
 
 #include "../phasedetection.h"
 

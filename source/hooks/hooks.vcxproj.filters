@@ -11,6 +11,9 @@
     <Filter Include="Source Files\hooks_and_tramps">
       <UniqueIdentifier>{8f45bc76-8410-4dcf-9011-dcc4bf233648}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\libc">
+      <UniqueIdentifier>{be7aee64-8a82-4989-bb81-86a33fe7f636}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dettime.cpp">
@@ -93,6 +96,9 @@
     </ClCompile>
     <ClCompile Include="ipc.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libc\string.cpp">
+      <Filter>Source Files\libc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +206,9 @@
     </ClInclude>
     <ClInclude Include="ipc.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libc\string.h">
+      <Filter>Source Files\libc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

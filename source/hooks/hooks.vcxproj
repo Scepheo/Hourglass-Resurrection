@@ -58,6 +58,12 @@
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)source\hooks\libc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)source\hooks\libc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
       <Message>
@@ -78,6 +84,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/Oy- /permissive- %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
     </ClCompile>
     <Link>
       <AdditionalOptions>/SAFESEH %(AdditionalOptions)</AdditionalOptions>
@@ -93,6 +100,7 @@
       <ImportLibrary>
       </ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,7 +118,7 @@
       <AdditionalOptions>/Oy- /permissive- %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <OmitFramePointers>false</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
@@ -140,6 +148,7 @@
       <ImportLibrary>
       </ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -147,6 +156,7 @@
     <ClCompile Include="hooks\Xinputhooks.cpp" />
     <ClCompile Include="intercept.cpp" />
     <ClCompile Include="ipc.cpp" />
+    <ClCompile Include="libc\string.cpp" />
     <ClCompile Include="phasedetection.cpp" />
     <ClCompile Include="print.cpp" />
     <ClCompile Include="soundmixing.cpp">
@@ -188,6 +198,7 @@
     <ClInclude Include="intercept.h" />
     <ClInclude Include="..\shared\msg.h" />
     <ClInclude Include="ipc.h" />
+    <ClInclude Include="libc\string.h" />
     <ClInclude Include="locale.h" />
     <ClInclude Include="msgqueue.h" />
     <ClInclude Include="phasedetection.h" />
